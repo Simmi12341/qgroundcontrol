@@ -255,8 +255,6 @@ public:
     Q_PROPERTY(bool                 gimbalYawLock               READ gimbalYawLock                                                  NOTIFY gimbalYawLockChanged)
     Q_PROPERTY(bool                 gimbalClickOnMapActive      READ gimbalClickOnMapActive     WRITE setGimbalClickOnMapActive     NOTIFY gimbalClickOnMapActiveChanged)
     Q_PROPERTY(bool                 isROIEnabled                READ isROIEnabled                                                   NOTIFY isROIEnabledChanged)
-    Q_PROPERTY(bool                 gimbalHaveControl           READ gimbalHaveControl                                              NOTIFY gimbalHaveControlChanged)
-    Q_PROPERTY(bool                 gimbalOthersHaveControl     READ gimbalOthersHaveControl                                        NOTIFY gimbalOthersHaveControlChanged)
     Q_PROPERTY(CheckList            checkListState              READ checkListState             WRITE setCheckListState             NOTIFY checkListStateChanged)
     Q_PROPERTY(bool                 readyToFlyAvailable         READ readyToFlyAvailable                                            NOTIFY readyToFlyAvailableChanged)  ///< true: readyToFly signalling is available on this vehicle
     Q_PROPERTY(bool                 readyToFly                  READ readyToFly                                                     NOTIFY readyToFlyChanged)
@@ -915,8 +913,6 @@ public:
     qreal       gimbalYaw               () const;
     bool        gimbalData              () const;
     bool        isROIEnabled            () const{ return _isROIEnabled; }
-    bool        gimbalHaveControl       () const;
-    bool        gimbalOthersHaveControl () const;
 
     //uint32_t    gimbalStatusFlags         ()   const{ return _gimbalStatusFlags; }
     bool        gimbalRetracted           ()   const{ return _gimbalRetracted; }
@@ -1048,8 +1044,6 @@ signals:
     void gimbalYawLockChanged           ();
     void gimbalClickOnMapActiveChanged  ();
     void isROIEnabledChanged            ();
-    void gimbalHaveControlChanged       ();
-    void gimbalOthersHaveControlChanged ();
     void gimbalControllerChanged        ();
     void initialConnectComplete         ();
 
