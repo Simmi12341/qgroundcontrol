@@ -82,7 +82,7 @@ LinuxBuild {
         GST_ROOT = $$PWD/../../gstreamer-1.0-android-universal-1.18.5/x86
     }
     exists($$GST_ROOT) {
-        QMAKE_CXXFLAGS  += -pthread
+        QMAKE_CXXFLAGS  += -pthread -fPIC
         CONFIG          += VideoEnabled
 
         # We want to link these plugins statically

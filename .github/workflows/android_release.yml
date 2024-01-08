@@ -54,7 +54,7 @@ jobs:
         run: |
           git fetch --all --tags -f --depth 1
 
-      - name: Install Qt6 for linux
+      - name: Install Qt6 for linux (required for Android)
         uses: jurplel/install-qt-action@v3
         with:
           version:      ${{ env.QT_VERSION }}
@@ -65,7 +65,7 @@ jobs:
           modules:      qtcharts qtlocation qtpositioning qtspeech qt5compat qtmultimedia qtserialport qtimageformats qtshadertools qtconnectivity
           setup-python: true
 
-      - name: Install Qt
+      - name: Install Q for Android
         uses: jurplel/install-qt-action@v3
         with:
           version:      ${{ env.QT_VERSION }}
